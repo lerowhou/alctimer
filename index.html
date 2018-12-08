@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="master.css">
+  <title>Time to BUHICH</title>
+</head>
+<body>
+  <div class="buh">
+    <h1>Time to BUHICH:</h1>
+    <h2 id="buh"></h2>
+  </div>
+<script>
+  var buhich= new Date("December 22, 2018 16:00:00").getTime();
+  function timerr(){
+    var today =  new Date().getTime();
+    var range = buhich - today;
+    var days = Math.floor(range / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((range % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((range % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((range % (1000 * 60)) / 1000);
+    document.getElementById("buh").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    setInterval(10000)
+  }
+  window.onload=setInterval(timerr,100);
+</script>
+</body>
+</html>
